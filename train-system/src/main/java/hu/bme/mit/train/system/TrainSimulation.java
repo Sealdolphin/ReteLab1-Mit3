@@ -18,7 +18,7 @@ public class TrainSimulation extends JFrame {
         JLabel lbLimit = new JLabel("Speed Limit");
         JLabel lbJoystick = new JLabel("Joystick");
         JSpinner spLimit = new JSpinner(new SpinnerNumberModel(50,50,120,1));
-        JSlider sliderJoystick = new JSlider(JSlider.HORIZONTAL, -10, 10, 0);
+        JSlider sliderJoystick = new JSlider(JSlider.HORIZONTAL, -20, 20, 0);
         //Creating timer
         /*
         The timer is set to 1 second delay.
@@ -33,7 +33,7 @@ public class TrainSimulation extends JFrame {
         spLimit.addChangeListener(event ->
                 system.getSensor().overrideSpeedLimit((int) spLimit.getValue()));
         //Creating joytick interface
-        sliderJoystick.setMajorTickSpacing(5);
+        sliderJoystick.setMajorTickSpacing(10);
         sliderJoystick.setMinorTickSpacing(1);
         sliderJoystick.setPaintLabels(true);
         //Adding joystick change event -> use sensor's override function
