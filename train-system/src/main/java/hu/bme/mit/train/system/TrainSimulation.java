@@ -47,7 +47,10 @@ public class TrainSimulation extends JFrame {
                 .addGroup(
                         layout.createSequentialGroup()
                                 .addComponent(lbSpeedText).addGap(10).addComponent(lbSpeed)
-                ).addComponent(lbLimit).addComponent(spLimit).addComponent(lbJoystick).addComponent(sliderJoystick)
+                ).addGroup(
+                        layout.createSequentialGroup()
+                                .addComponent(lbLimit).addGap(10).addComponent(spLimit)
+                ).addComponent(lbJoystick).addComponent(sliderJoystick)
         );
         //Constructing vertical layout
         layout.setVerticalGroup(
@@ -55,13 +58,10 @@ public class TrainSimulation extends JFrame {
                 .addGroup(
                         layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(lbSpeedText).addComponent(lbSpeed)
-                )
-                        .addComponent(lbLimit)
-                        .addGap(5)
-                        .addComponent(spLimit)
-                        .addGap(5)
-                        .addComponent(lbJoystick)
-                        .addComponent(sliderJoystick)
+                ).addGroup(
+                        layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(lbLimit).addComponent(spLimit)
+                ).addGap(5).addComponent(lbJoystick).addComponent(sliderJoystick)
         );
 
         //Finalizing size and start timer
