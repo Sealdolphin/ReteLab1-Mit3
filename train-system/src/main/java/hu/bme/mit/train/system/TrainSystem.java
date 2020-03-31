@@ -25,4 +25,7 @@ public class TrainSystem {
 		return user;
 	}
 
+	public static void main(String[] args) {
+		new TrainSimulation(new TrainSystem()).setVisible(true);
+	}
 }
