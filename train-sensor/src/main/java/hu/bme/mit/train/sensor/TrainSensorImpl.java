@@ -31,10 +31,12 @@ public class TrainSensorImpl implements TrainSensor {
 	@Override
 	public void overrideSpeedLimit(int speedLimit) {
 		//Analyze speed limit
-		//Absolute margin: 0- 500
-		if( speedLimit < 0 || speedLimit > 500) setAlarmFlag(true);
+		//Absolute margin: 0 - 500
+		boolean absolute = speedLimit < 0 || speedLimit > 500;
 		//Relative margin: 50%
-		if (controller.getReferenceSpeed() * 0.5 > speedLimit) setAlarmFlag(true);
+		boolean relative = controller.getReferenceSpeed() * 0.5 > speedLimit;
+
+		setAlarmFlag(absolute || relative);
 
 		this.speedLimit = speedLimit;
 		controller.setSpeedLimit(speedLimit);
